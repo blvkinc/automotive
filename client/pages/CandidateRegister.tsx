@@ -560,25 +560,80 @@ export default function CandidateRegister() {
                       Languages Known
                       <span className="text-automotive-red">*</span>
                     </label>
-                    <select
-                      multiple
-                      name="languages"
-                      value={formData.languages}
-                      onChange={handleLanguagesChange}
-                      className="w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-automotive-red"
-                      size={5}
-                    >
-                      <option value="english">English</option>
-                      <option value="arabic">Arabic</option>
-                      <option value="hindi">Hindi</option>
-                      <option value="urdu">Urdu</option>
-                      <option value="french">French</option>
-                      <option value="spanish">Spanish</option>
-                      <option value="german">German</option>
-                      <option value="chinese">Chinese</option>
-                    </select>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      Hold Ctrl/Cmd to select multiple languages
+
+                    {/* Selected Languages as Tags */}
+                    {formData.languages.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {formData.languages.map((language) => (
+                          <div
+                            key={language}
+                            className="inline-flex items-center gap-2 bg-automotive-red/20 border border-automotive-red text-automotive-red px-3 py-1.5 rounded-full text-sm font-medium"
+                          >
+                            {language}
+                            <button
+                              type="button"
+                              onClick={() => handleRemoveLanguage(language)}
+                              className="hover:bg-automotive-red/30 rounded-full p-0.5"
+                            >
+                              <X size={16} />
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Language Dropdown */}
+                    <div className="relative">
+                      <button
+                        type="button"
+                        onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
+                        className="w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground text-left focus:outline-none focus:ring-2 focus:ring-automotive-red"
+                      >
+                        <span className="text-muted-foreground">
+                          {formData.languages.length === 0
+                            ? "Select languages..."
+                            : `${formData.languages.length} language${formData.languages.length !== 1 ? "s" : ""} selected`}
+                        </span>
+                      </button>
+
+                      {languageDropdownOpen && (
+                        <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-lg shadow-lg z-10">
+                          {languageOptions.map((language) => (
+                            <button
+                              key={language}
+                              type="button"
+                              onClick={() => {
+                                handleAddLanguage(language);
+                              }}
+                              disabled={formData.languages.includes(language)}
+                              className={`w-full text-left px-4 py-2.5 hover:bg-input transition-colors ${
+                                formData.languages.includes(language)
+                                  ? "bg-automotive-red/10 text-automotive-red font-medium"
+                                  : "text-foreground"
+                              } ${
+                                formData.languages.includes(language)
+                                  ? "cursor-default"
+                                  : "cursor-pointer"
+                              } border-b border-border last:border-b-0`}
+                            >
+                              <div className="flex items-center gap-2">
+                                <div
+                                  className={`w-4 h-4 border-2 rounded ${
+                                    formData.languages.includes(language)
+                                      ? "bg-automotive-red border-automotive-red"
+                                      : "border-border"
+                                  }`}
+                                />
+                                {language}
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    <p className="text-xs text-muted-foreground mt-2">
+                      Click to add languages or click the X on tags to remove
                     </p>
                     {errors.languages && (
                       <p className="text-automotive-red text-sm mt-1">{errors.languages}</p>
