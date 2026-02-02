@@ -73,11 +73,23 @@ const initialState: CandidateFormData = {
   agreeTerms: false,
 };
 
+const languageOptions = [
+  "English",
+  "Arabic",
+  "Hindi",
+  "Urdu",
+  "French",
+  "Spanish",
+  "German",
+  "Chinese",
+];
+
 export default function CandidateRegister() {
   const [formData, setFormData] = useState<CandidateFormData>(initialState);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
