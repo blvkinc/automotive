@@ -115,17 +115,27 @@ export default function CandidateRegister() {
     }
   };
 
-  const handleLanguagesChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const options = Array.from(e.target.options);
-    const selected = options.filter((o) => o.selected).map((o) => o.value);
-    setFormData((prev) => ({ ...prev, languages: selected }));
-    if (errors.languages) {
-      setErrors((prev) => {
-        const newErrors = { ...prev };
-        delete newErrors.languages;
-        return newErrors;
-      });
+  const handleAddLanguage = (language: string) => {
+    if (!formData.languages.includes(language)) {
+      setFormData((prev) => ({
+        ...prev,
+        languages: [...prev.languages, language],
+      }));
+      if (errors.languages) {
+        setErrors((prev) => {
+          const newErrors = { ...prev };
+          delete newErrors.languages;
+          return newErrors;
+        });
+      }
     }
+  };
+
+  const handleRemoveLanguage = (language: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      languages: prev.languages.filter((l) => l !== language),
+    }));
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
