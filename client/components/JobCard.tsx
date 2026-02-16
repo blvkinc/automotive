@@ -56,6 +56,11 @@ export default function JobCard({ job, compact = false }: JobProps) {
         <div
           className={`flex-shrink-0 flex flex-col items-start md:items-end text-sm text-muted-foreground ${compact ? "ml-auto" : ""}`}
         >
+          {job.status === "Boosted" && (
+            <Badge variant="default" className="mb-2 bg-primary hover:bg-primary/90">
+              Featured
+            </Badge>
+          )}
           {job.timeAgo && <span className="mb-1">{job.timeAgo}</span>}
           {job.daysLeft && (
             <span className="text-automotive-red font-semibold">
@@ -64,14 +69,7 @@ export default function JobCard({ job, compact = false }: JobProps) {
           )}
         </div>
 
-        {/* Boost badge - visually distinctive */}
-        {job.status === "Boosted" && (
-          <div className="absolute top-3 right-3 md:top-4 md:right-4">
-            <Badge variant="default" className="bg-primary hover:bg-primary/90">
-              Featured
-            </Badge>
-          </div>
-        )}
+
       </div>
 
       {/* Footer line for compact cards */}
