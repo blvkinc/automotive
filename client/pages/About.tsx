@@ -28,11 +28,14 @@ export default function About() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark py-12 px-4">
+      <section className="bg-background py-12 px-4 border-b border-border">
         <div className="container mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Automotive headhunting and search made simple.
+            About Automotivate
           </h1>
+          <p className="text-xl text-muted-foreground max-w-2xl">
+            We are the leading job portal dedicated exclusively to the automotive industry in the MENA region.
+          </p>
         </div>
       </section>
 
@@ -45,7 +48,7 @@ export default function About() {
           </p>
 
           <h2 className="text-3xl font-bold text-foreground mb-8 mt-12">How It Works</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {steps.map((step) => (
               <div key={step.number} className="bg-card p-6 rounded-lg border border-border hover:border-automotive-red transition-colors">
@@ -65,8 +68,8 @@ export default function About() {
           </div>
 
           <div className="mt-12 text-center">
-            <Link 
-              to="/register" 
+            <Link
+              to="/register"
               className="inline-block bg-automotive-red text-automotive-red-foreground px-8 py-3 rounded font-semibold hover:bg-opacity-90 transition-colors"
             >
               Sign Up

@@ -79,13 +79,13 @@ export default function Billing() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark py-12 px-4">
+      <section className="bg-background py-12 px-4 border-b border-border">
         <div className="container mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-            Billing & Invoices
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Billing & Subscription
           </h1>
-          <p className="text-muted-foreground">
-            Manage your payments and download invoices
+          <p className="text-xl text-muted-foreground">
+            Manage your subscription plan and payment methods
           </p>
         </div>
       </section>

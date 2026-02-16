@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Bell, Moon, Sun } from "lucide-react";
+import { Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
+
 
 interface NavItem {
   label: string;
@@ -28,7 +28,7 @@ export default function DashboardNav({
   notificationCount = 0,
 }: DashboardNavProps) {
   const location = useLocation();
-  const { theme, setTheme } = useTheme();
+
 
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -38,17 +38,7 @@ export default function DashboardNav({
     <nav className="flex items-center justify-between px-4 py-3 md:px-6">
       {/* Logo */}
       <Link to="/" className="flex items-center space-x-2">
-        <div className="flex flex-col">
-          <span className="text-lg font-bold text-foreground leading-none">
-            auto
-          </span>
-          <span className="text-lg font-bold text-automotive-red leading-none">
-            motivate
-          </span>
-          <span className="text-[8px] text-muted-foreground tracking-wider">
-            JOBS
-          </span>
-        </div>
+        <img src="/jobs.svg" alt="Automotivate Jobs" className="h-10 w-auto" />
       </Link>
 
       {/* Navigation Links - Hidden on mobile */}
@@ -71,17 +61,7 @@ export default function DashboardNav({
 
       {/* Right Side Actions */}
       <div className="flex items-center space-x-2">
-        {/* Theme Toggle */}
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="h-9 w-9"
-        >
-          <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
+
 
         {/* Notifications */}
         <DropdownMenu>

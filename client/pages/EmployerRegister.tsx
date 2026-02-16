@@ -72,9 +72,9 @@ export default function EmployerRegister() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark py-12 px-4">
+      <section className="bg-background py-12 px-4 border-b border-border">
         <div className="container mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Employer Registration
           </h1>
           <p className="text-xl text-muted-foreground">

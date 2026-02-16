@@ -134,7 +134,7 @@ export default function CandidateRegister() {
 
   return (
     <Layout>
-      <section className="bg-automotive-dark py-10 px-4">
+      <section className="bg-background py-10 px-4 border-b border-border">
         <div className="container mx-auto max-w-4xl">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Candidate Registration</h1>
           <p className="text-muted-foreground">Create an account and apply to the latest automotive roles.</p>

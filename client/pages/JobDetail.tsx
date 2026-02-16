@@ -7,9 +7,9 @@ export default function JobDetail() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark py-8 px-4">
+      <section className="bg-background py-8 px-4 border-b border-border">
         <div className="container mx-auto">
-          <Link to="/jobs" className="text-automotive-red hover:underline mb-4 inline-block">
+          <Link to="/jobs" className="text-primary hover:underline mb-4 inline-block">
             ← Back to Jobs
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
@@ -27,13 +27,13 @@ export default function JobDetail() {
 
       {/* Job Details */}
       <section className="py-12 px-4">
-        <div className="container mx-auto max-w-4xl grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="container mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Main Content */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             {/* Job Overview */}
             <div className="bg-card p-6 rounded-lg border border-border mb-8">
               <h2 className="text-2xl font-bold text-card-foreground mb-6">Job Overview</h2>
-              
+
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                 <div className="bg-automotive-gray p-4 rounded">
                   <div className="text-sm text-muted-foreground mb-1">Employment Type</div>
@@ -78,7 +78,7 @@ export default function JobDetail() {
               <h2 className="text-2xl font-bold text-card-foreground mb-4">Responsibilities</h2>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-automotive-red mr-3 mt-1">•</span>
+                  <span className="text-primary mr-3 mt-1">•</span>
                   <span className="text-muted-foreground">Monitor and control access to facilities</span>
                 </li>
                 <li className="flex items-start">
@@ -133,23 +133,23 @@ export default function JobDetail() {
             {/* Company Card */}
             <div className="bg-card p-6 rounded-lg border border-border mb-6 sticky top-4">
               <h3 className="text-lg font-bold text-card-foreground mb-4">Company</h3>
-              
+
               <div className="mb-6 p-4 bg-automotive-gray rounded">
                 <div className="text-lg font-semibold text-card-foreground mb-2">Automotivate Me</div>
                 <div className="text-sm text-muted-foreground mb-4">Dubai, UAE</div>
-                <Link 
+                <Link
                   to="/company/1"
-                  className="text-automotive-red hover:underline text-sm font-semibold"
+                  className="text-primary hover:underline text-sm font-semibold"
                 >
                   View Company Profile →
                 </Link>
               </div>
 
-              <button className="w-full bg-automotive-red text-automotive-red-foreground py-3 rounded font-semibold hover:bg-opacity-90 transition-colors mb-3">
+              <button className="w-full bg-primary text-primary-foreground py-3 rounded font-semibold hover:bg-opacity-90 transition-colors mb-3">
                 Apply Now
               </button>
 
-              <button className="w-full border border-automotive-red text-automotive-red py-3 rounded font-semibold hover:bg-automotive-red hover:text-automotive-red-foreground transition-colors">
+              <button className="w-full border border-primary text-primary py-3 rounded font-semibold hover:bg-primary hover:text-primary-foreground transition-colors">
                 Save Job
               </button>
 
@@ -173,7 +173,7 @@ export default function JobDetail() {
             {/* Similar Jobs */}
             <div className="bg-card p-6 rounded-lg border border-border">
               <h3 className="text-lg font-bold text-card-foreground mb-4">Similar Jobs</h3>
-              
+
               <div className="space-y-4">
                 {[1, 2, 3].map((i) => (
                   <Link

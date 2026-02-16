@@ -24,8 +24,8 @@ const mockJobs: JobListing[] = Array.from({ length: 12 }, (_, i) => ({
   timeAgo: `${5 - (i % 5)} Hours Ago`,
   daysLeft: `${5 - (i % 5)} days left`,
   positionCount: "Positions Count",
-  status: i % 3 === 0 ? "Boosted" : "Live",
-}));
+  status: (i % 3 === 0 ? "Boosted" : "Live") as "Boosted" | "Live",
+})).sort((a, b) => (a.status === "Boosted" ? -1 : 1));
 
 export default function Jobs() {
   const [filters, setFilters] = useState({
@@ -62,16 +62,20 @@ export default function Jobs() {
 
   return (
     <Layout>
-      <section className="bg-automotive-dark py-12 px-4">
+      <section className="bg-background py-12 px-4 border-b border-border">
         <div className="container mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">JOBS</h1>
-          <p className="text-xl text-muted-foreground">Find your next opportunity in the automotive industry</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Find Your Dream Job
+          </h1>
+          <p className="text-xl text-muted-foreground">
+            Explore the best opportunities in the automotive industry
+          </p>
         </div>
       </section>
 
       <section className="py-12 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-1">
               <div className="bg-card p-6 rounded-xl border border-border sticky top-4">
                 {/* Hero Image */}
@@ -150,15 +154,42 @@ export default function Jobs() {
               </div>
             </div>
 
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-4">
               <div className="mb-6">
                 <h2 className="text-2xl font-bold text-foreground">Recent Trending Jobs</h2>
               </div>
 
-              <div className="space-y-4">
-                {filteredJobs.map((job) => (
-                  <JobCard key={job.id} job={job} />
-                ))}
+              <div className="space-y-6">
+                {/* Featured Jobs Section */}
+                {filteredJobs.some(job => job.status === "Boosted") && (
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-primary flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary"></span>
+                      Featured Opportunities
+                    </h3>
+                    <div className="space-y-4">
+                      {filteredJobs
+                        .filter(job => job.status === "Boosted")
+                        .map((job) => (
+                          <JobCard key={job.id} job={job} />
+                        ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Other Jobs Section */}
+                <div className="space-y-4">
+                  {filteredJobs.some(job => job.status === "Boosted") && (
+                    <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 mt-8">
+                      Latest Openings
+                    </h3>
+                  )}
+                  {filteredJobs
+                    .filter(job => job.status !== "Boosted")
+                    .map((job) => (
+                      <JobCard key={job.id} job={job} />
+                    ))}
+                </div>
               </div>
 
               <div className="flex justify-center items-center gap-2 mt-8">

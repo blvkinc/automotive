@@ -81,9 +81,9 @@ export default function Checkout() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark py-12 px-4">
+      <section className="bg-background py-12 px-4 border-b border-border">
         <div className="container mx-auto">
-          <Link to="/pricing" className="text-automotive-red hover:underline mb-4 inline-block">
+          <Link to="/pricing" className="text-primary hover:underline mb-4 inline-block">
             ← Back to Pricing
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">
@@ -303,7 +303,7 @@ export default function Checkout() {
                         onChange={handleInputChange}
                         required
                         placeholder="1234 5678 9012 3456"
-                        maxLength="19"
+                        maxLength={19}
                         className="w-full px-4 py-2 bg-input border border-border rounded text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-automotive-red"
                       />
                     </div>
@@ -320,7 +320,7 @@ export default function Checkout() {
                           onChange={handleInputChange}
                           required
                           placeholder="MM/YY"
-                          maxLength="5"
+                          maxLength={5}
                           className="w-full px-4 py-2 bg-input border border-border rounded text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-automotive-red"
                         />
                       </div>
@@ -336,7 +336,7 @@ export default function Checkout() {
                           onChange={handleInputChange}
                           required
                           placeholder="123"
-                          maxLength="4"
+                          maxLength={4}
                           className="w-full px-4 py-2 bg-input border border-border rounded text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-automotive-red"
                         />
                       </div>

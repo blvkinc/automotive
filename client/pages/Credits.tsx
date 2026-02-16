@@ -91,12 +91,12 @@ export default function Credits() {
 
   const postingCredits = mockCredits.filter(c => c.creditType === "Posting Credit");
   const extensionCredits = mockCredits.filter(c => c.creditType === "Extension Credit");
-  
-  const availablePosting = postingCredits.length > 0 
-    ? postingCredits[postingCredits.length - 1].balance 
+
+  const availablePosting = postingCredits.length > 0
+    ? postingCredits[postingCredits.length - 1].balance
     : 0;
-  const availableExtension = extensionCredits.length > 0 
-    ? extensionCredits[extensionCredits.length - 1].balance 
+  const availableExtension = extensionCredits.length > 0
+    ? extensionCredits[extensionCredits.length - 1].balance
     : 0;
 
   const filteredCredits = selectedType
@@ -138,9 +138,9 @@ export default function Credits() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark py-12 px-4">
+      <section className="bg-background py-12 px-4 border-b border-border">
         <div className="container mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Credits & Ledger
           </h1>
           <p className="text-muted-foreground">
@@ -199,31 +199,28 @@ export default function Credits() {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setSelectedType(null)}
-                className={`px-4 py-2 rounded font-semibold transition-colors ${
-                  selectedType === null
+                className={`px-4 py-2 rounded font-semibold transition-colors ${selectedType === null
                     ? "bg-automotive-red text-automotive-red-foreground"
                     : "bg-card text-muted-foreground hover:text-foreground border border-border"
-                }`}
+                  }`}
               >
                 All
               </button>
               <button
                 onClick={() => setSelectedType("Posting Credit")}
-                className={`px-4 py-2 rounded font-semibold transition-colors ${
-                  selectedType === "Posting Credit"
+                className={`px-4 py-2 rounded font-semibold transition-colors ${selectedType === "Posting Credit"
                     ? "bg-automotive-red text-automotive-red-foreground"
                     : "bg-card text-muted-foreground hover:text-foreground border border-border"
-                }`}
+                  }`}
               >
                 Posting Credits
               </button>
               <button
                 onClick={() => setSelectedType("Extension Credit")}
-                className={`px-4 py-2 rounded font-semibold transition-colors ${
-                  selectedType === "Extension Credit"
+                className={`px-4 py-2 rounded font-semibold transition-colors ${selectedType === "Extension Credit"
                     ? "bg-automotive-red text-automotive-red-foreground"
                     : "bg-card text-muted-foreground hover:text-foreground border border-border"
-                }`}
+                  }`}
               >
                 Extension Credits
               </button>
@@ -235,7 +232,7 @@ export default function Credits() {
             <div className="text-sm font-semibold text-card-foreground px-4">
               Transaction History
             </div>
-            
+
             {filteredCredits.map((event) => (
               <div key={event.id} className="bg-card p-6 rounded-lg border border-border hover:border-automotive-red transition-colors">
                 <div className="flex items-start justify-between gap-4">
@@ -243,7 +240,7 @@ export default function Credits() {
                     <div className="flex-shrink-0 mt-1">
                       {getEventIcon(event.eventType)}
                     </div>
-                    
+
                     <div className="flex-1">
                       <h3 className="font-semibold text-card-foreground">
                         {getEventLabel(event.eventType)}

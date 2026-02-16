@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BoostBadge from "./ui/boost-badge";
+import { Badge } from "@/components/ui/badge";
 
 interface JobProps {
   job: {
@@ -21,7 +21,7 @@ export default function JobCard({ job, compact = false }: JobProps) {
   return (
     <Link
       to={`/job/${job.id}`}
-      className={`block bg-card rounded-lg transition-colors group ${job.status === "Boosted" ? "border-2 border-automotive-red shadow-lg" : "border border-border"} ${compact ? "p-4" : "p-6"}`}
+      className={`block bg-card rounded-lg transition-colors group border border-border hover:shadow-md ${compact ? "p-4" : "p-6"}`}
     >
       <div
         className={`relative ${compact ? "flex items-center gap-4" : "flex flex-col md:flex-row md:justify-between md:items-start gap-4"}`}
@@ -66,8 +66,10 @@ export default function JobCard({ job, compact = false }: JobProps) {
 
         {/* Boost badge - visually distinctive */}
         {job.status === "Boosted" && (
-          <div className="absolute top-3 right-3 md:top-4 md:right-4 flex items-center space-x-2">
-            <BoostBadge showLabel={true} />
+          <div className="absolute top-3 right-3 md:top-4 md:right-4">
+            <Badge variant="default" className="bg-primary hover:bg-primary/90">
+              Featured
+            </Badge>
           </div>
         )}
       </div>
@@ -77,7 +79,7 @@ export default function JobCard({ job, compact = false }: JobProps) {
         <div className="mt-3 text-xs text-muted-foreground flex justify-between">
           <span>{job.positionCount}</span>
           {job.status === "Boosted" ? (
-            <span className="text-automotive-red font-semibold">Boosted</span>
+            <span className="text-primary font-semibold">Featured</span>
           ) : (
             <span className="text-muted-foreground">{job.status}</span>
           )}

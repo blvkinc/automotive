@@ -65,13 +65,13 @@ export default function Blog() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark py-12 px-4">
+      <section className="bg-background py-12 px-4 border-b border-border">
         <div className="container mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-            Blog
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Automotive Insights
           </h1>
           <p className="text-xl text-muted-foreground">
-            Stay updated with industry insights and career advice
+            Latest news, trends and career advice from the industry experts
           </p>
         </div>
       </section>
@@ -99,7 +99,7 @@ export default function Blog() {
 
                 <div className="flex items-center justify-between pt-4 border-t border-border">
                   <span className="text-sm text-muted-foreground">By {post.author}</span>
-                  <Link 
+                  <Link
                     to={`/blog/${post.id}`}
                     className="text-automotive-red hover:underline font-semibold text-sm"
                   >
@@ -111,41 +111,9 @@ export default function Blog() {
           </div>
 
           {/* Pagination */}
-          <div className="flex justify-center items-center gap-2 mt-12">
-            <button className="px-4 py-2 bg-card border border-border rounded hover:border-automotive-red text-foreground font-semibold">
-              Previous
-            </button>
-            <button className="px-4 py-2 bg-automotive-red text-automotive-red-foreground rounded font-semibold">
-              1
-            </button>
-            <button className="px-4 py-2 bg-card border border-border rounded hover:border-automotive-red text-foreground">
-              2
-            </button>
-            <button className="px-4 py-2 bg-card border border-border rounded hover:border-automotive-red text-foreground font-semibold">
-              Next
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter Signup */}
-      <section className="bg-automotive-red py-16 px-4">
-        <div className="container mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-automotive-red-foreground mb-4">
-            Stay Updated
-          </h2>
-          <p className="text-automotive-red-foreground mb-8">
-            Subscribe to our newsletter for the latest automotive industry news and career tips.
-          </p>
-          
-          <div className="flex gap-2">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="flex-1 px-4 py-3 bg-white text-foreground rounded placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-automotive-dark"
-            />
-            <button className="bg-automotive-dark text-automotive-red px-6 py-3 rounded font-semibold hover:bg-opacity-90 transition-colors">
-              Subscribe
+          <div className="text-center mt-12">
+            <button className="bg-primary text-primary-foreground px-6 py-3 rounded font-semibold hover:bg-opacity-90 transition-colors">
+              Load More Articles
             </button>
           </div>
         </div>

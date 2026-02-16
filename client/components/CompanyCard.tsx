@@ -24,12 +24,12 @@ export default function CompanyCard({
   return (
     <Link
       to={`/company/${company.id}`}
-      className={`group block bg-card rounded-xl transition-all hover:shadow-lg ${company.boosted ? "border-2 border-automotive-red shadow-md" : "border border-border hover:border-automotive-red/50"} p-5`}
+      className={`group block bg-card rounded-xl transition-all hover:shadow-lg ${company.boosted ? "border-2 border-primary shadow-md" : "border border-border hover:border-primary/50"} p-5`}
     >
       <div className="flex items-start gap-4">
         {/* Left - Logo */}
         <div className="flex-shrink-0">
-          <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-automotive-red/20 to-purple-500/20 flex items-center justify-center text-foreground font-bold text-lg border border-border">
+          <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center text-foreground font-bold text-lg border border-border">
             {company.name.split(" ")[0].slice(0, 2).toUpperCase()}
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function CompanyCard({
           {/* Header */}
           <div className="flex items-start justify-between gap-3 mb-3">
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-semibold text-card-foreground group-hover:text-automotive-red transition-colors mb-1">
+              <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
                 {company.name}
               </h3>
               <div className="flex items-center gap-2 flex-wrap">
@@ -65,7 +65,7 @@ export default function CompanyCard({
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 text-muted-foreground hover:text-automotive-red transition-colors"
+                className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -106,7 +106,7 @@ export default function CompanyCard({
               {company.positionCount ?? "5 Positions remaining"}
             </span>
             {company.boosted && (
-              <span className="inline-flex items-center gap-1 bg-automotive-red text-automotive-red-foreground px-3 py-1.5 rounded-lg text-sm font-semibold">
+              <span className="inline-flex items-center gap-1 bg-primary text-primary-foreground px-3 py-1.5 rounded-lg text-sm font-semibold">
                 Boosted
               </span>
             )}

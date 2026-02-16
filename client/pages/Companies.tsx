@@ -64,7 +64,7 @@ export default function Companies() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark py-12 px-4">
+      <section className="bg-background py-12 px-4 border-b border-border">
         <div className="container mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
             COMPANIES
@@ -78,7 +78,7 @@ export default function Companies() {
       {/* Main Content */}
       <section className="py-12 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Filters Sidebar */}
             <div className="lg:col-span-1">
               <div className="bg-card p-6 rounded-xl border border-border sticky top-4">
@@ -86,8 +86,8 @@ export default function Companies() {
                 <div className="mb-6 flex items-center justify-center">
                   <div className="relative">
                     <div className="absolute inset-0 bg-automotive-red/20 blur-xl rounded-full"></div>
-                    <div className="relative bg-gradient-to-br from-automotive-red/30 to-purple-500/30 p-8 rounded-full">
-                      <svg className="w-16 h-16 text-automotive-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="relative bg-gradient-to-br from-primary/30 to-purple-500/30 p-8 rounded-full">
+                      <svg className="w-16 h-16 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
                     </div>
@@ -190,7 +190,7 @@ export default function Companies() {
                   <div className="pt-4">
                     <button
                       onClick={() => setFilteredCompanies(mockCompanies)}
-                      className="w-full bg-automotive-red text-automotive-red-foreground py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
+                      className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
                     >
                       Submit
                     </button>
@@ -200,15 +200,15 @@ export default function Companies() {
             </div>
 
             {/* Companies Grid */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-4">
               <div className="mb-6 flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-foreground">
                   COMPANIES
                 </h2>
                 <div className="flex gap-2 text-sm">
-                  <button className="px-3 py-1 text-foreground hover:text-automotive-red transition-colors">All</button>
-                  <button className="px-3 py-1 text-foreground hover:text-automotive-red transition-colors">Recent</button>
-                  <button className="px-3 py-1 text-foreground hover:text-automotive-red transition-colors">Trending</button>
+                  <button className="px-3 py-1 text-foreground hover:text-primary transition-colors">All</button>
+                  <button className="px-3 py-1 text-foreground hover:text-primary transition-colors">Recent</button>
+                  <button className="px-3 py-1 text-foreground hover:text-primary transition-colors">Trending</button>
                 </div>
               </div>
 
@@ -220,16 +220,16 @@ export default function Companies() {
 
               {/* Pagination */}
               <div className="flex justify-center items-center gap-2 mt-8">
-                <button className="w-8 h-8 flex items-center justify-center bg-automotive-red text-automotive-red-foreground rounded-full font-medium">
+                <button className="w-8 h-8 flex items-center justify-center bg-primary text-primary-foreground rounded-full font-medium">
                   1
                 </button>
-                <button className="w-8 h-8 flex items-center justify-center bg-card border border-border rounded-full hover:border-automotive-red text-foreground">
+                <button className="w-8 h-8 flex items-center justify-center bg-card border border-border rounded-full hover:border-primary text-foreground">
                   2
                 </button>
-                <button className="w-8 h-8 flex items-center justify-center bg-card border border-border rounded-full hover:border-automotive-red text-foreground">
+                <button className="w-8 h-8 flex items-center justify-center bg-card border border-border rounded-full hover:border-primary text-foreground">
                   3
                 </button>
-                <button className="px-3 py-1 text-foreground hover:text-automotive-red">
+                <button className="px-3 py-1 text-foreground hover:text-primary">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

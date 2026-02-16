@@ -28,13 +28,13 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark py-12 px-4">
+      <section className="bg-background py-12 px-4 border-b border-border">
         <div className="container mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Contact Us
           </h1>
-          <p className="text-xl text-muted-foreground">
-            Get in touch with our team
+          <p className="text-xl text-muted-foreground max-w-2xl">
+            Have questions or need assistance? We're here to help.
           </p>
         </div>
       </section>
@@ -46,7 +46,7 @@ export default function Contact() {
             {/* Left Side - Image */}
             <div className="hidden lg:block">
               <div className="bg-gradient-to-br from-automotive-red/20 to-automotive-dark rounded-2xl overflow-hidden h-[600px] flex items-center justify-center">
-                <div className="w-full h-full bg-cover bg-center" style={{backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 600%22%3E%3Crect fill=%22%23111%22 width=%22400%22 height=%22600%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%23666%22%3EContact Image%3C/text%3E%3C/svg%3E')"}}>
+                <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 600%22%3E%3Crect fill=%22%23111%22 width=%22400%22 height=%22600%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%23666%22%3EContact Image%3C/text%3E%3C/svg%3E')" }}>
                 </div>
               </div>
             </div>

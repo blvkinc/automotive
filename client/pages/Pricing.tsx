@@ -88,13 +88,13 @@ export default function Pricing() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark py-16 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section className="bg-background py-16 px-4 border-b border-border text-center">
+        <div className="container mx-auto max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Simple, Transparent Pricing
           </h1>
           <p className="text-xl text-muted-foreground">
-            Choose the perfect plan to post your jobs and find top automotive talent
+            Choose the plan that best fits your recruitment needs
           </p>
         </div>
       </section>
@@ -106,11 +106,10 @@ export default function Pricing() {
             {packages.map((pkg) => (
               <div
                 key={pkg.id}
-                className={`relative rounded-lg transition-all duration-300 ${
-                  pkg.popular
+                className={`relative rounded-lg transition-all duration-300 ${pkg.popular
                     ? "ring-2 ring-automotive-red lg:scale-105 bg-card border border-automotive-red"
                     : "bg-card border border-border hover:border-automotive-red"
-                }`}
+                  }`}
               >
                 {pkg.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -142,11 +141,10 @@ export default function Pricing() {
                   {/* CTA Button */}
                   <Link
                     to={`/checkout/${pkg.id}`}
-                    className={`block w-full text-center py-3 rounded font-semibold mb-8 transition-colors ${
-                      pkg.popular
+                    className={`block w-full text-center py-3 rounded font-semibold mb-8 transition-colors ${pkg.popular
                         ? "bg-automotive-red text-automotive-red-foreground hover:bg-opacity-90"
                         : "border border-automotive-red text-automotive-red hover:bg-automotive-red hover:text-automotive-red-foreground"
-                    }`}
+                      }`}
                   >
                     {pkg.cta}
                   </Link>
@@ -189,7 +187,7 @@ export default function Pricing() {
           <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
             Boost Your Listings
           </h2>
-          
+
           <div className="bg-card p-8 rounded-lg border border-border">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>

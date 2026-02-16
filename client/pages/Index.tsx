@@ -115,8 +115,8 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-automotive-dark text-center py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-automotive-red/10 to-transparent"></div>
+      <section className="bg-background text-center py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
         <div className="container mx-auto max-w-5xl relative z-10">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
             Your next job in automotive is<br />a click away
@@ -160,7 +160,7 @@ export default function Index() {
                 </select>
               </div>
             </div>
-            <button className="w-full bg-automotive-red text-automotive-red-foreground py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-colors text-lg">
+            <button className="w-full bg-primary text-primary-foreground py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-colors text-lg">
               Find Jobs
             </button>
           </div>
@@ -176,7 +176,7 @@ export default function Index() {
             </h2>
             <Link
               to="/jobs"
-              className="text-automotive-red hover:underline text-sm md:text-base font-medium"
+              className="text-primary hover:underline text-sm md:text-base font-medium"
             >
               Browse More →
             </Link>
@@ -191,7 +191,7 @@ export default function Index() {
       </section>
 
       {/* Trending Jobs Section */}
-      <section className="py-16 px-4 bg-automotive-gray/30">
+      <section className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 gap-4">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground">
@@ -199,7 +199,7 @@ export default function Index() {
             </h2>
             <Link
               to="/jobs"
-              className="text-automotive-red hover:underline text-sm md:text-base font-medium"
+              className="text-primary hover:underline text-sm md:text-base font-medium"
             >
               Browse More →
             </Link>
@@ -222,7 +222,7 @@ export default function Index() {
             </h2>
             <Link
               to="/jobs"
-              className="text-automotive-red hover:underline text-sm md:text-base font-medium"
+              className="text-primary hover:underline text-sm md:text-base font-medium"
             >
               Browse More →
             </Link>
@@ -245,7 +245,7 @@ export default function Index() {
             </h2>
             <Link
               to="/companies"
-              className="text-automotive-red hover:underline text-sm md:text-base"
+              className="text-primary hover:underline text-sm md:text-base"
             >
               Browse More
             </Link>
@@ -260,10 +260,10 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-automotive-red text-center relative overflow-hidden">
+      <section className="py-20 px-4 bg-primary text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent"></div>
         <div className="container mx-auto max-w-4xl relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-automotive-red-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
             Fast Track Your Job Search For Free
           </h2>
           <p className="text-xl text-automotive-red-foreground/90 mb-8">
@@ -272,7 +272,7 @@ export default function Index() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/register-candidate"
-              className="bg-white text-automotive-red px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+              className="bg-background text-primary px-8 py-4 rounded-lg font-semibold hover:bg-muted transition-colors shadow-lg"
             >
               Register Now For Free
             </Link>
