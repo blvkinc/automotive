@@ -12,6 +12,7 @@ import Companies from "./pages/Companies";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import JobDetail from "./pages/JobDetail";
@@ -57,6 +58,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/register" element={<Register />} />
             <Route path="/register-candidate" element={<CandidateRegister />} />
             <Route path="/register-employer" element={<EmployerRegister />} />
